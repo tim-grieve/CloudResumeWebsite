@@ -1,5 +1,7 @@
 <head>
   <link rel="stylesheet" href="formatting.css">
+
+  
 </head>
 
 <div id="header"></div>
@@ -13,7 +15,22 @@
   <h1>Resume</h1>
 
   <h2>Tim</h2>
+  
+  <h3>
+     
+  </h3>
 
+  <script>
+    fetch('https://pp6j9w8kb4.execute-api.ca-central-1.amazonaws.com/ResumeSiteCounter')
+      .then(res => {
+        return res.text;
+      })
+      .then(data => {
+        const markup = `<b>${data}</b>`
+
+        document.querySelector('h3').insertAdjacentHTML('beforeend', markup);
+      })
+  </script>
   <hr />
 
   <br>
