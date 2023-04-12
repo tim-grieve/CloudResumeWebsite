@@ -1,0 +1,44 @@
+name: crc_terraform_frontend
+on:
+  push:
+    branches:
+      - "main"
+permissions:
+  id-token: write
+  contents: write
+  
+jobs:
+  Terraform_Deploy:
+    runs-on: ubuntu-latest
+    
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./
+    
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with: 
+          role-to-assume: arn:aws:iam::053127563287:role/GithubActionsRole
+          aws-region: ca-central-1
+#Checkout git repository for pipeline run
+      - name: checkout
+        uses: actions/checkout@v2
+#Install Terraform on runner vm
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v1
+        with:
+          terraform_version: 1.4.4
+ #Update tf state data     
+      - name: Terraform Init
+        id: Init
+        run: terraform init
+#Plan out steps to be applied with terraform
+      - name: Terraform Plan
+        id: Plan
+        run: terraform plan -out deploy.tf
+#Apply changes based on terraform plan
+      - name: Terraform Apply
+        id: Apply
+        run: terraform apply deploy.tf
