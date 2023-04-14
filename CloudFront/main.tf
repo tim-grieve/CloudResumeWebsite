@@ -7,6 +7,14 @@ terraform {
   }
 }
 
+provider "aws" {
+  alias = "aws"
+}
+
+provider "aws" {
+  alias = "aws_us_east_1"
+}
+
 #Origin Access ID Resource to secure acess to only the cloud front distribution
 resource "aws_cloudfront_origin_access_identity" "resume-oid" {
   comment = var.cloudfront_oid_comment
