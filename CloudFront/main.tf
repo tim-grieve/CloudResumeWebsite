@@ -130,7 +130,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   tags = {
     "${var.cloudfront_tag1_name}" = "${var.cloudfront_tag1_value}"
   }
-
+#Set certificate properties
   viewer_certificate {
     acm_certificate_arn = aws_acm_certificate.default.arn
     ssl_support_method = "sni-only"
