@@ -16,7 +16,7 @@ terraform {
 provider "aws" {
   region = var.provider_region_id
 }
-
+#S3 Bucket config
 module "S3" {
   source = "./S3"
 
