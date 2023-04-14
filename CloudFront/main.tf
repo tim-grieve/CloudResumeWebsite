@@ -6,8 +6,8 @@ terraform {
     }
 
     configuration_aliases = [
-      "aws.aws",
-      "aws.aws_us_east_1",
+      aws.aws,
+      aws.aws_us_east_1,
     ]
   }
 }
