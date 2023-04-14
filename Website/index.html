@@ -8,54 +8,89 @@
 
 <div class="left"></div>
 
-<div class="stuff">
+<div id=hitcounter></div>
+
+<script src="counterDisplay.js"></script>
+
+
+<div class="resume">
 
   <br><br>
-
-  <h1>Resume</h1>
-
-  <h2>Tim</h2>
+  <ul class="personal_details"></ul>
+    <h1>Tim Grieve</h1>
+    
+      <li class="personal_details">tim.grieve@shellflow.com</li>
+      <li class="personal_details"><a href="https://www.linkedin.com/in/timgr/">linkedin</a></li>
+      <li class="personal_details"><a href="https://github.com/tim-grieve"></a>github</li>
+    
+   
+  </ul>
   
-  <h3>
-     
-  </h3>
+  
 
-  <script>
-    fetch('https://pp6j9w8kb4.execute-api.ca-central-1.amazonaws.com/ResumeSiteCounter')
-      .then(res => {
-        return res.text;
-      })
-      .then(data => {
-        const markup = `<b>${data}</b>`
-
-        document.querySelector('h3').insertAdjacentHTML('beforeend', markup);
-      })
-  </script>
   <hr />
 
   <br>
 
-  <p class="head">Interests</p>
+  <p class="head">Projects</p>
+  
 
   <ul>
+  <h3><a href="https://cloudresumechallenge.dev/docs/the-challenge/aws/">Cloud Resume Challenge - https://cloudresumechallenge.dev/docs/the-challenge/aws/</a></h3>
+  <p>Deploy a resume website using AWS services S3,CloudFront, Lambda,APIGateway,DynamoDB, Infrastructure as code and CI/CD</p>
+  </ul>
 
-    <li>Drawing</li>
+<p class="head">Experience</p>
 
-    <li>Photography</li>
+<ul>
+<h3>Septodont - Senior IT Administrator, Digital Workplace & IT Systems</h3>
+    <p>Subject matter expert in the implementation and configuration of identity management and security, collaboration tools, device management, application and database services</p>
+    <li>Subject matter expert for Azure cloud services, Microsoft 365 and hybrid connectivity</li>  
+    <li>Task automation using powershell, python, azure function apps, power automate and power apps</li>
+    <li>Planned and implemented upgrade of hybrid Exchange server from 2016 to 2019</li>
+    <li>Planned and implemented deployment of CyberArk Priviliged Cloud PAM solution</li> 
+  
+<h3>Sim International - System Administrator</h3>
+    <p>Generalist System Administrator managing Windows Server Infrastructure, Active Directory, Exchange, VMWARE and M365</p>
+       <li>Planned and implemented hybrid Exchange deployment and migrated mailboxes to M365</li>
+       <li>Planned and implemented upgrade of HP hyperconverged storage arrays with attached vmware exsi hosts and vcenter</li>
+       <li>Managed routine patching and maintenance of server infrastructure</li>
+       <li>Routinley audited services and made best practice recomenations to management</li>
 
-    <li>Design</li>
+<h3>Blue Apache - Technical Account Manager</h3>
+    <p>MSP System Administrator with technical ownership of the design, deployment and maintenance of assigned customer accounts</p>
+       <li>Planned and implemented rollout of new voip telephony systems</li>
+       <li>Assisted in the rollout of WAN upgrades and hardware changeovers</li>
+       <li>Planned and updated upgrade of Exchange 2010 to Exchange 2016</li>
+       <li>Assisted frontline support teams with escalated issues</li>
 
-    <li>Programming</li>
+<h3>Thomas Duryea Logicalis - Professional Services Engineer</h3>
+    <p>Professional services engineer in the mobility and collaboration practice, focused on design and implementation of Microsoft cloud services and hybrid connectivity</p>
+       <li>Design plan and implement M365 deployments (Mainly Exchange and SharePoint online)</li>
+       <li>Hybrid connectivity configuration (Azure AD Connect, MFA, ADFS)</li>
+       <li>PKI infrastructure upgrades</li>
+       <li>Active Directory and Exchange troubleshooting</li>
+      
+<h3>Datacom - Server Administrator</h3>
+    <p>MSP System Administrator focused on the management of Windows Server Infrastructure,Applications(Active Directory, Exchange) virtualisation(Hyper-v,VMWARE) and physical data center hardware</p>
+       <li>Routine patching, maintenance and health checking of customer systems</li>
+       <li>Managed third party vendors</li>
+       <li>Planned and implemented changes and small projects</li>
+       <li>Participated in larger projects and implementations in conjunction with technical consultants and project managers</li>
+       <li>Provided rostered on call support for after hours issues</li>
 
-    <li>Computer Science</li>
 
   </ul>
 
-  <p class="head">Skills</p>
+  <p class="head">Certifications</p>
 
   <ul>
 
-    <li>Web Design with HTML & CSS</li>
+    <li>AWS Certified SysOps Administrator – Associate</li>
+    <li>AWS Certified Cloud Practioner</li>
+    <li>ICAgile Certified Professional - Foundations of DevOps</li>
+    <li>Prince2 Foundation 2017</li>
+    <li>ITIL Foundation 2011</li>
 
   </ul>
 
@@ -71,32 +106,22 @@
 
   </ul>
 
-  <p class="head">Experience</p>
+  <p class="head">Skills</p>
 
   <ul>
-
-    <li>Lots</li>
-
-    <li>Too much</li>
-
+    <li>AWS</li>
+    <li>Azure</li>
+    <li>M365</li>
+    <li>Terraform</li>
+    <li>Python</li>
+    <li>Powershell</li>
+    <li>Windows Server</li>
+    <li>Active Directory</li>
+    <li>Exchange</li>
+    <li>Linux</li>
   </ul>
-
-  <p class="head">Extracurriculars</p>
-
-  <ul>
-
-    <li>Drinking</li>
-
-    <li>Fighting</li>
-
-    <li>Figure skating</li>
-
-  </ul>
-
 </div>
 
 <div class="right"></div>
 
-<div id="footer">
 
-  <h2 id="name">Tim</h2></div>

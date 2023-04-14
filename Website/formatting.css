@@ -1,13 +1,31 @@
 body {
-  background-color: lightblue;
+  background-color: white;
 }
 
 h1 {
-  color: white;
+  color: Black;
   text-align: center;
+}
+
+h3 {
+  color: black;
+  text-align: left;
 }
 
 p {
   font-family: verdana;
-  font-size: 20px;
+  font-size: 15px;
+}
+
+.head {
+  color: black;
+  text-align: left;
+  font-size: large;
+}
+
+.personal_details {
+  color: blue;
+  text-align: right;
+  font-size: medium;
+  list-style-type: none;
 }
