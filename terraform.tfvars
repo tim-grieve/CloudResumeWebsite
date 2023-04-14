@@ -1,4 +1,5 @@
 provider_region_id                             = "ca-central-1"
+provider_us-east_1_region_id                   = "us-east-1"
 s3_bucket_name                                 = "tgrieve-resume-bucket"
 s3_tag_name                                    = "Name"
 s3_tag_value                                   = "Bucket for cloud resume"
@@ -34,3 +35,4 @@ cloudfront_default_ttl_1                       = 3600
 cloudfront_default_ttl_2                       = 86400
 cloudfront_max_ttl_1                           = 86400
 cloudfront_max_ttl_2                           = 31536000
+cloudfront_site_name                           = "resume.shellflow.com"

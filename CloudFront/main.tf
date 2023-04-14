@@ -1,7 +1,19 @@
 #Origin Access ID Resource to secure acess to only the cloud front distribution
 resource "aws_cloudfront_origin_access_identity" "resume-oid" {
   comment = var.cloudfront_oid_comment
-} 
+}
+
+resource "aws_acm_certificate" "default" {
+  provider = "aws.aws_us_east_1"
+
+  domain_name = "${var.cloudfront_site_name}"
+
+  validation_method = "DNS"
+
+  lifecycle {
+    create_before_destroy = true
+  }
+}
 
 #Cloudfront distribution using the resume bucket as the origin
 resource "aws_cloudfront_distribution" "s3_distribution" {
@@ -24,6 +36,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
  #   bucket          = "mylogs.s3.amazonaws.com"
  #   prefix          = "myprefix"
  # }
+  aliases = ["${var.cloudfront_site_name}"]
 
   default_cache_behavior {
     allowed_methods  = var.cloudfront_cache_behavior_methods_1
@@ -103,6 +116,6 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   }
 
   viewer_certificate {
-    cloudfront_default_certificate = var.cloudfront_default_certificate
+    cloudfront_default_certificate = aws_acm_certificate.default.arn
   }
 }

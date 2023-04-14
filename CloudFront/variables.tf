@@ -113,3 +113,7 @@ variable "cloudfront_max_ttl_2" {
 variable "cloudfront_compress" {
     type = bool
 }
+
+variable "cloudfront_site_name" {
+  type = string
+}

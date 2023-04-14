@@ -16,6 +16,12 @@ terraform {
 provider "aws" {
   region = var.provider_region_id
 }
+
+provider "aws" {
+  alias = "aws_us_east_1"
+  region = var.provider_us-east_1_region_id
+}
+
 #S3 Bucket config
 module "S3" {
   source = "./S3"
@@ -33,6 +39,11 @@ module "S3" {
 #Cloudfront distribution config
 module "CloudFront" {
   source = "./CloudFront"
+
+  providers = {
+    aws = aws
+    aws.aws_us_east_1 = aws.aws_us_east_1 
+   }
 
   cloudfront_originid                            = var.cloudfront_originid
   cloudfront_distribution_comment                = var.cloudfront_distribution_comment
@@ -62,6 +73,7 @@ module "CloudFront" {
   cloudfront_max_ttl_1                           = var.cloudfront_max_ttl_1
   cloudfront_max_ttl_2                           = var.cloudfront_max_ttl_2
   cloudfront_min_ttl                             = var.cloudfront_min_ttl
+  cloudfront_site_name                           = var.cloudfront_site_name
 
   s3_bucket_regional_domain_name = module.S3.s3_bucket_regional_domain_name
 }

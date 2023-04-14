@@ -3,6 +3,10 @@ variable "provider_region_id" {
   default = "ca-central-1"
 }
 
+variable "provider_us-east_1_region_id"{
+  type = string
+}
+
 variable "s3_bucket_name" {
   type = string
 }
@@ -141,4 +145,8 @@ variable "cloudfront_max_ttl_1" {
 
 variable "cloudfront_max_ttl_2" {
   type = number
+}
+
+variable "cloudfront_site_name" {
+  type = string
 }
