@@ -4,7 +4,7 @@ terraform {
       source  = "hashicorp/aws"
       version = "~> 4.0"
       configuration_aliases = [
-      aws.aws,
+      aws,
       aws.aws_us_east_1,
       ]
     }
