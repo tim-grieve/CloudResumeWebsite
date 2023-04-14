@@ -30,6 +30,7 @@ module "S3" {
   cloudfront_oid_arn    = module.CloudFront.cloudfront_origin_access_id
 }
 
+#Cloudfront distribution config
 module "CloudFront" {
   source = "./CloudFront"
 
