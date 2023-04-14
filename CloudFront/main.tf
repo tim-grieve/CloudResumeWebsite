@@ -18,7 +18,7 @@ terraform {
 resource "aws_cloudfront_origin_access_identity" "resume-oid" {
   comment = var.cloudfront_oid_comment
 }
-
+#Create SSL certificate
 resource "aws_acm_certificate" "default" {
   provider = aws.aws_us_east_1
 
