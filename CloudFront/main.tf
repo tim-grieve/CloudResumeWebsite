@@ -3,7 +3,7 @@ required_providers {
       source  = "hashicorp/aws"
       version = "~> 4.0"
     }
-
+}
 #Origin Access ID Resource to secure acess to only the cloud front distribution
 resource "aws_cloudfront_origin_access_identity" "resume-oid" {
   comment = var.cloudfront_oid_comment
