@@ -1,10 +1,16 @@
+required_providers {
+    aws = {
+      source  = "hashicorp/aws"
+      version = "~> 4.0"
+    }
+
 #Origin Access ID Resource to secure acess to only the cloud front distribution
 resource "aws_cloudfront_origin_access_identity" "resume-oid" {
   comment = var.cloudfront_oid_comment
 }
 
 resource "aws_acm_certificate" "default" {
-  provider = "aws.aws_us_east_1"
+  provider = aws.aws_us_east_1
 
   domain_name = "${var.cloudfront_site_name}"
 
