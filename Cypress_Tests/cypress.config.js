@@ -5,7 +5,7 @@ module.exports = defineConfig({
         baseUrl: 'https://resume.shellflow.com',
         supportFile: false,
         specPattern: 'e2e/*.cy.js',
-        browser: 'Chrome'
+        browser: 'chrome'
     },
     // The rest of the Cypress config options go here...
 })
