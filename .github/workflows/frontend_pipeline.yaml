@@ -2,13 +2,13 @@ name: crc_terraform_frontend
 on:
   push:
     branches:
-      - "main"
+      - "test"
 permissions:
   id-token: write
   contents: write
   
 jobs:
-  Terraform_Deploy:
+  Terraform_Test:
     runs-on: ubuntu-latest
     
     defaults:
@@ -42,3 +42,68 @@ jobs:
       - name: Terraform Apply
         id: Apply
         run: terraform apply deploy.tf
+  Destroy: 
+    if: ${{ always() }}
+    needs: Tests
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./
+    
+    steps:
+      - name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v2
+        with: 
+          role-to-assume: arn:aws:iam::053127563287:role/GithubActionsRole
+          aws-region: ca-central-1
+#Checkout git repository for pipeline run
+      - name: checkout
+        uses: actions/checkout@v3
+
+      #Install Terraform on runner vm
+      - name: Install Terraform
+        uses: hashicorp/setup-terraform@v2
+        with:
+          terraform_version: 1.4.4
+  
+      - name: Terraform INIT
+        run: terraform init
+
+      - name: Select Terraform Test Workspace
+        run: terraform workspace select test
+
+      - name: Terraform Plan Destroy Test Resources
+        run: terraform plan -destroy -var-file="test.tfvars" -out destroy.tf
+
+      - name: Terraform Apply Destroy Test Resources
+        run: terraform apply destroy.tf
+
+  Main_Branch_Pull_Request:
+    permissions:
+      pull-requests: write
+    needs: Tests
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./
+        
+#Final step to approve for prod
+    steps:
+      - name: Create Pull request
+        env:
+          GITHUB_TOKEN: ${{ github.token }}
+        run: gh pr create --head "test" --base "main" --title "Merge Tested Changes into Main Repository" --body "Deploying to production" --repo "tim-grieve/CloudResumeWebsite"
+      
+      - name: Approve Pull request
+        env:
+          GITHUB_TOKEN: ${{ secrets.PULL_APPROVER }}
+        run: gh pr review test --repo "tim-grieve/CloudResumeWebsite" --approve
+
+      - name: Merge Pull request
+        env:
+          GITHUB_TOKEN: ${{ secrets.PULL_APPROVER }}
+        run: gh pr merge test --repo "tim-grieve/CloudResumeWebsite" --merge
