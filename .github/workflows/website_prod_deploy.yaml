@@ -47,7 +47,7 @@ jobs:
 
   Cypress_End_To_End_Test:
     runs-on: ubuntu-latest
-
+    needs: Prod_Deploy
     defaults:
       run:
         shell: bash
