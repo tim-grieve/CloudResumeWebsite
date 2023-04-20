@@ -35,4 +35,4 @@ cloudfront_default_ttl_1                       = 3600
 cloudfront_default_ttl_2                       = 86400
 cloudfront_max_ttl_1                           = 86400
 cloudfront_max_ttl_2                           = 31536000
-cloudfront_site_name                           = "test_resume.shellflow.com"
+cloudfront_site_name                           = "test.resume.shellflow.com"
