@@ -1,9 +1,9 @@
-name: cypress_hello_world
+name: cypress_end_to_end_tests
 on:
   workflow_dispatch:
 
 jobs:
-  Cypress_Runner:
+  Cypress_End_To_End_Test:
     runs-on: ubuntu-latest
 
     defaults:
