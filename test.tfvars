@@ -1,6 +1,6 @@
 provider_region_id                             = "ca-central-1"
 provider_us-east_1_region_id                   = "us-east-1"
-s3_bucket_name                                 = "test_tgrieve-resume-bucket"
+s3_bucket_name                                 = "test-tgrieve-resume-bucket"
 s3_tag_name                                    = "Name"
 s3_tag_value                                   = "TEST Bucket for cloud resume"
 s3_bucket_access                               = "private"
