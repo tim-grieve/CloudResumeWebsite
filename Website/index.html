@@ -37,7 +37,16 @@
 
   <ul>
   <h3><a href="https://cloudresumechallenge.dev/docs/the-challenge/aws/">Cloud Resume Challenge - https://cloudresumechallenge.dev/docs/the-challenge/aws/</a></h3>
-  <p>Deploy a resume website using AWS services S3,CloudFront, Lambda,APIGateway,DynamoDB, Infrastructure as code and CI/CD</p>
+  <li>Objective: Publish your resume to a website including a javascript hit counter. Use serverless applications, infrastructure as code and CI/CD pipelines.</li>
+
+    <li>Cloud Platform: AWS</li>
+    
+    <li>Frontend : Utilized Terraform configurations to deploy html, css and javascript code to an S3 bucket which was then securely published to an https website using an CloudFront distribution.</li>
+    
+    <li>Backend: Utilized Terraform configurations to deploy an Lambda function using a python script to retrieve and increment the count of site hits from a DynamoDB table. The functionality was then made accessible to the frontend website via and HTTP API published with API Gateway</li>
+    
+    <li>Both frontend and backend deployments are managed by a GitHub Actions YAML workflow which runs tests then initiates a pull request to the main branch to deploy changes to production.</li>
+  
   </ul>
 
 <p class="head">Experience</p>
