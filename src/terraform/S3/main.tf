@@ -41,7 +41,7 @@ resource "aws_s3_bucket_policy" "resume_bucket_policy" {
   policy = data.aws_iam_policy_document.resume_s3_policy.json
 }
 
-#Load website files into S3 bucket
+#Load website files into S3 bucket.
 resource "aws_s3_object" "website_files" {
   for_each = fileset("./src/Website/", "*")
   bucket = aws_s3_bucket.resume_files.id
