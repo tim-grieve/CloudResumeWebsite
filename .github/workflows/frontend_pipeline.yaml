@@ -14,7 +14,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./
+        working-directory: ./src
     
     steps:
       - name: Configure AWS Credentials
@@ -33,13 +33,16 @@ jobs:
       
  #Update tf state data     
       - name: Terraform Init
+        working-directory: ./src/terraform
         id: Init
         run: terraform init
       
       - name: Select Terraform Test Workspace
+        working-directory: ./src/terraform
         run: terraform workspace select test
 #Plan out steps to be applied with terraform
       - name: Terraform Plan
+        working-directory: ./src/terraform
         id: Plan
         run: terraform plan -var-file="test.tfvars"
 

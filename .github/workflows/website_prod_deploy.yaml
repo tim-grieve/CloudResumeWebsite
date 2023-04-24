@@ -14,7 +14,7 @@ jobs:
     defaults:
       run:
         shell: bash
-        working-directory: ./
+        working-directory: ./src
     
     steps:
       - name: Configure AWS Credentials
@@ -34,12 +34,15 @@ jobs:
 
  #Configure environemnt for deployment  
       - name: Terraform INIT
+        working-directory: ./src/terraform
         run: terraform init
 
       - name: Select Terraform default Workspace
+        working-directory: ./src/terraform
         run: terraform workspace select default
 
       - name: Plan Prod_Deploy
+        working-directory: ./src/terraform
         run: terraform plan -out deploy.tf
 
       - name: Apply changes to prod
