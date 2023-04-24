@@ -49,6 +49,11 @@ jobs:
         working-directory: ./src/terraform
         run: terraform apply deploy.tf
 
+#Upload Website files
+      - name: Website File Upload
+        working-directory: ./src/Website
+        run: aws s3 ls
+
   Cypress_End_To_End_Test:
     runs-on: ubuntu-latest
     needs: Prod_Deploy
