@@ -1,4 +1,4 @@
-name: backend_prod_deploy
+name: frontend_prod_deploy
 on:
   push:
     branches:
