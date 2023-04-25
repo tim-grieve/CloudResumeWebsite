@@ -123,7 +123,7 @@ resource "aws_cloudfront_distribution" "s3_distribution" {
   restrictions {
     geo_restriction {
       restriction_type = var.cloudfront_georestriction_type
-      locations        = var.cloudfront_georestriction_locations
+      #locations        = var.cloudfront_georestriction_locations
     }
   }
 
