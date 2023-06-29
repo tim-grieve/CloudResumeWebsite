@@ -1,3 +1,4 @@
+#Central file for production variables
 provider_region_id                             = "ca-central-1"
 provider_us-east_1_region_id                   = "us-east-1"
 s3_bucket_name                                 = "tgrieve-resume-bucket"
