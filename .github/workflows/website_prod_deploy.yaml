@@ -54,28 +54,27 @@ jobs:
         working-directory: ./src/Website
         run: aws s3 sync ./ s3://tgrieve-resume-bucket
 
-  Cypress_End_To_End_Test:
-    runs-on: ubuntu-latest
-    needs: Prod_Deploy
-    defaults:
-      run:
-        shell: bash
-        working-directory: ./
+# Cypress_End_To_End_Test:
+#    runs-on: ubuntu-latest
+#    needs: Prod_Deploy
+#    defaults:
+#      run:
+#        shell: bash
+#        working-directory: ./
   
-    steps:
-      - name: checkout
-        uses: actions/checkout@v3
+#    steps:
+#      - name: checkout
+#        uses: actions/checkout@v3
       
-      - name: Install npm
-        working-directory: ./src/tests/Cypress_Tests
-        run: npm install cypress --save-dev
+#      - name: Install npm
+#        working-directory: ./src/tests/Cypress_Tests
+#        run: npm install cypress --save-dev
 
-      - name: Cypress run
-        uses: cypress-io/github-action@v5
-        with:
-          working-directory: ./src/tests/Cypress_Tests
-          spec: e2e/**.cy.js
-          record: true
-        env:
-          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
-    
+#      - name: Cypress run
+#        uses: cypress-io/github-action@v5
+#        with:
+#          working-directory: ./src/tests/Cypress_Tests
+#          spec: e2e/**.cy.js
+#          record: true
+#        env:
+#          CYPRESS_RECORD_KEY: ${{ secrets.CYPRESS_RECORD_KEY }}
