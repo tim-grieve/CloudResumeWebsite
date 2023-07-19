@@ -7,7 +7,7 @@ with open ('content.json') as json_file:
 
 #Build HTML file for website
 environment = Environment(loader=FileSystemLoader("templates/"))
-resume_filename = "index.html"
+resume_filename = "../index.html"
 resume_template = environment.get_template("resume.html")
 
 context = {
