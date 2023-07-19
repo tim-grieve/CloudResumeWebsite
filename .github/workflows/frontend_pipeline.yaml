@@ -25,6 +25,12 @@ jobs:
 #Checkout git repository for pipeline run
       - name: checkout
         uses: actions/checkout@v2
+
+#Update index.html if changes detected
+#      - name: Conditional Website Changes
+#        working-directory: ./src/Website
+#        run: 
+
 #Install Terraform on runner vm
       - name: Install Terraform
         uses: hashicorp/setup-terraform@v1

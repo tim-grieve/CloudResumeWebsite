@@ -1,0 +1,37 @@
+body {
+  background-color: white;
+}
+
+h1 {
+  color: Black;
+  text-align: center;
+}
+
+h3 {
+  color: black;
+  text-align: left;
+}
+
+h4 {
+  color: black;
+  text-align: left;
+  font-weight: normal;
+}
+
+p {
+  font-family: verdana;
+  font-size: 15px;
+}
+
+.head {
+  color: black;
+  text-align: left;
+  font-size: large;
+}
+
+.personal_details {
+  color: blue;
+  text-align: right;
+  font-size: medium;
+  list-style-type: none;
+}
