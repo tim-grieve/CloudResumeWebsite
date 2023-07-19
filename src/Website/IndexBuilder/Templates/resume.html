@@ -1,0 +1,55 @@
+<head>
+    <link rel="stylesheet" href="formatting.css">
+</head>
+
+<div id="header"></div>
+
+<div class="left"></div>
+
+<div id=hitcounter></div>
+
+<script src="counterDisplay.js"></script>
+
+<div class="resume">
+  
+    <br><br>
+    <ul class="personal_details">
+      <h1>{{resume_name}}</h1>
+      
+        <li class="personal_details">{{email}}</li>
+        <li class="personal_details"><a href="{{linkedin}}">linkedin</a></li>
+        <li class="personal_details"><a href="{{github}}">github</a></li>
+    </ul>
+
+<hr>
+
+<p class="head">Experience</p>
+
+<ul>
+   {% for job in jobs %}
+    <h3>{{job.company}} - {{job.title}}</h3>
+    <h4>{{job.tenure}}</h4>
+    <p>{{job.job_description}}</p>
+   {% endfor %}
+</ul>
+
+<p class="head">Certifications</p>
+
+<ul>
+    {% for cert in certs %}
+     <h3>{{cert.title}}</h3>
+    {% endfor %}
+ </ul>
+
+ <p class="head">Projects</p>
+
+ <ul>
+    {% for project in projects %}
+     <h3>{{project.name}}</h3>
+     <p>{{project.summary}}</p>
+    {% endfor %}
+ </ul>
+
+
+    
+  
