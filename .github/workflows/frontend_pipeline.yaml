@@ -8,6 +8,27 @@ permissions:
   contents: write
   
 jobs:
+  Refresh_Index:
+    runs-on: ubuntu-latest
+
+    defaults:
+      run:
+        shell: bash
+        working-directory: ./src/Website/IndexBuilder
+    
+    steps:
+        - name: Configure AWS Credentials
+          uses: aws-actions/configure-aws-credentials@v2
+          with: 
+            role-to-assume: arn:aws:iam::053127563287:role/GithubActionsRole
+            aws-region: ca-central-1
+#Checkout git repository for pipeline run
+        - name: checkout
+          uses: actions/checkout@v2
+        
+        - name: Run Indexbuilder Python
+          run: python3 IndexBuilder.py
+
   Tests:
     runs-on: ubuntu-latest
     
@@ -25,11 +46,6 @@ jobs:
 #Checkout git repository for pipeline run
       - name: checkout
         uses: actions/checkout@v2
-
-#Update index.html if changes detected
-#      - name: Conditional Website Changes
-#        working-directory: ./src/Website
-#        run: 
 
 #Install Terraform on runner vm
       - name: Install Terraform
