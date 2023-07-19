@@ -25,8 +25,11 @@ jobs:
 #Checkout git repository for pipeline run
         - name: checkout
           uses: actions/checkout@v2
+
+        - name: install boto3 module
+          run: python3 -m pip install boto3
         
-        - name: Run Indexbuilder Python
+        - name: Run Indexbuilder Python 
           run: python3 IndexBuilder.py
 
   Tests:
