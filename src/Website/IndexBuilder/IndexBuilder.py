@@ -26,7 +26,7 @@ with open(resume_filename, mode="w", encoding="utf-8") as resume:
 
 #Upload File to S3
 client = boto3.client("s3")
-client.upload_file("/tmp/index.html", "tgrieve-resume-bucket", "index.html", ExtraArgs={"content-type": "text/html"})
+client.upload_file("/tmp/index.html", "tgrieve-resume-bucket", "index.html", ExtraArgs={"ContentType": "text/html"})
 
 
 
