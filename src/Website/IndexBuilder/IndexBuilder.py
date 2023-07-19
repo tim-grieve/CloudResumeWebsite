@@ -24,6 +24,10 @@ context = {
 with open(resume_filename, mode="w", encoding="utf-8") as resume:
     resume.write(resume_template.render(context))
 
+#Upload File to S3
+client = boto3.client("s3")
+client.upload_file("/tmp/index.html", "s3://tgrieve-resume-bucket", "/index.html")
+
 
 
 
