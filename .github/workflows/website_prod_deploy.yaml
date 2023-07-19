@@ -52,7 +52,7 @@ jobs:
 #Upload Website files
       - name: Website File Upload
         working-directory: ./src/Website
-        run: aws s3 sync ./ s3://tgrieve-resume-bucket
+        run: aws s3 sync ./ s3://tgrieve-resume-bucket --exclude "IndexBuilder/"
 
 # Cypress_End_To_End_Test:
 #    runs-on: ubuntu-latest
