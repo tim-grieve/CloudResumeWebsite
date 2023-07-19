@@ -1,5 +1,4 @@
 import json
-import boto3
 from jinja2 import Environment, FileSystemLoader
 
 #Store inputs in JSON file
