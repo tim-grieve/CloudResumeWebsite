@@ -31,7 +31,7 @@ p {
 
 .personal_details {
   color: blue;
-  text-align: right;
+  text-align: left;
   font-size: medium;
   list-style-type: none;
 }
