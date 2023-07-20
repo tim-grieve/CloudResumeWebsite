@@ -3,7 +3,8 @@
         "name": "Tim Grieve",
         "email": "tim.grieve@shellflow.com",
         "linkedinurl": "https://www.linkedin.com/in/timgr/",
-        "githuburl": "https://github.com/tim-grieve"     
+        "githuburl": "https://github.com/tim-grieve",
+        "summary": "AWS Certified DevOps Engineer with extensive IT infrastructure experience. Over 10 years IT infrastructure experience including AWS, Azure and hybrid cloud infrastructure."
     },
 
     "projects":[
@@ -42,7 +43,7 @@
             "company": "Datacom",
             "title": "Server Administrator",
             "tenure": "July 2011 - June 2015",
-            "job_description": "MSP System Administrator focused on the management of Windows Server Infrastructure,Applications(Active Directory, Exchange) virtualisation(Hyper-v,VMWARE) and physical data center hardware" 
+            "job_description": "MSP System Administrator focused on the management of Windows Server Infrastructure, Applications(Active Directory, Exchange) virtualisation(Hyper-v,VMWARE) and physical data center hardware" 
         }
 
     ],
