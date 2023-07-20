@@ -13,6 +13,7 @@ resume_template = environment.get_template("resume.html")
 
 context = {
     "resume_name": content['details']['name'],
+    "resume_summary": content['details']['summary'],
     "email": content['details']['email'],
     "linkedin": content['details']['linkedinurl'],
     "github": content['details']['githuburl'],
