@@ -30,7 +30,7 @@
 <ul>
    {% for job in jobs %}
     <h3>{{job.company}} - {{job.title}}</h3>
-    <h4>{{job.url}}</h4>
+    <a href="{{job.url}}">{{job.url}}</a>
     <h4>{{job.tenure}}</h4>
     <p>{{job.job_description}}</p>
    {% endfor %}
