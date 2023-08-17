@@ -4,7 +4,7 @@
         "email": "tim.grieve@shellflow.com",
         "linkedinurl": "https://www.linkedin.com/in/timgr/",
         "githuburl": "https://github.com/tim-grieve",
-        "summary": "AWS Certified DevOps Engineer with extensive IT infrastructure experience. Over 10 years IT infrastructure experience including AWS, Azure and hybrid cloud infrastructure."
+        "summary": "Cloud System Administrator with over 10 years IT infrastructure experience and 5 years supporting Azure, AWS and hybrid cloud infrastructure. Passionate advocate for the use of Infrastructure as code tooling along with strong Python and Powershell scripting experience. "
     },
 
     "projects":[
@@ -19,31 +19,36 @@
             "company": "Septodont",
             "title": "Senior IT Administrator, Digital Workplace & IT Systems",
             "tenure": "October 2019 - March 2023",
-            "job_description": "Subject matter expert in the implementation and configuration of identity management and security, collaboration tools, device management, application and database services"
+            "job_description": "Subject matter expert in the implementation and configuration of identity management and security, collaboration tools, device management, application and database services",
+            "url": "https://www.septodont-en.ca/"
         },
         {
             "company": "Sim International",
             "title": "System Administrator",
             "tenure": "July 2018 - October 2019",
-            "job_description": "Generalist System Administrator managing Windows Server Infrastructure, Active Directory, Exchange, VMWARE and M365"  
+            "job_description": "Generalist System Administrator managing Windows Server Infrastructure, Active Directory, Exchange, VMWARE and M365",
+            "url": "https://siminternational.com/"
         },
         {
             "company": "Blue Apache",
             "title": "Technical Account Manager",
             "tenure": "September 2017 - April 2018",
-            "job_description": "MSP System Administrator with technical ownership of the design, deployment and maintenance of assigned customer accounts" 
+            "job_description": "MSP System Administrator with technical ownership of the design, deployment and maintenance of assigned customer accounts",
+            "url": "https://www.blueapache.com/"
         },
         {
             "company": "Thomas Duryea Logicalis",
             "title": "Professional Services Engineer",
             "tenure": "October 2015 - June 2017",
-            "job_description": "Professional services engineer in the mobility and collaboration practice, focused on design and implementation of Microsoft cloud services and hybrid connectivity"  
+            "job_description": "Professional services engineer in the mobility and collaboration practice, focused on design and implementation of Microsoft cloud services and hybrid connectivity",
+            "url": "https://www.au.logicalis.com/"
         },
         {
             "company": "Datacom",
             "title": "Server Administrator",
             "tenure": "July 2011 - June 2015",
-            "job_description": "MSP System Administrator focused on the management of Windows Server Infrastructure, Applications(Active Directory, Exchange) virtualisation(Hyper-v,VMWARE) and physical data center hardware" 
+            "job_description": "MSP System Administrator focused on the management of Windows Server Infrastructure, Applications(Active Directory, Exchange) virtualisation(Hyper-v,VMWARE) and physical data center hardware",
+            "url": "https://datacom.com/nz/en/"
         }
 
     ],
